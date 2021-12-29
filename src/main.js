@@ -1,11 +1,14 @@
 import Vue from "vue";
 import App from "./App.vue";
+import Vuex from 'vuex'
 import router from "./router";
 import store from "./store";
 import { resetRouter } from './router'
 
 // 引入图标(没有用过)
 import "@/assets/iconfont/iconfont.css";
+
+Vue.use(Vuex)
 
 // 引入swiper相关部件
 import VueAwesomeSwiper from "vue-awesome-swiper";
