@@ -44,6 +44,7 @@ export default {
       allist:[],
       alarea:[],
       hok:null,
+
       // 图片资源如果不用loader处理，似乎会被打包到加载不出来，(webpack导致的)
       
       // swiper5的写法
@@ -116,6 +117,8 @@ export default {
     }
   },
   created(){
+    // this.allist=this.$store.state.list;
+    // this.alarea=this.$store.state.area;
   },
   methods: {
     hokk(){

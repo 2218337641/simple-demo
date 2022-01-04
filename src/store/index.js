@@ -5,6 +5,9 @@ Vue.use(Vuex);
 
 const state = {
   yname: "航班介绍",
+
+  // locale:"zh",
+
   list: [
     {
       name: "歪",
@@ -21,7 +24,7 @@ const state = {
       color: "white",
       backImage: {
         backgroundImage:
-          "url(" +
+        "url(" +
           require("@/assets/img/Snipaste_2021-12-08_14-00-46.png") +
           ")"
       }
@@ -90,10 +93,12 @@ const state = {
 export default new Vuex.Store({
   state,
   mutations: {
-    editname(state) {
-      state.yname = "jack";
-    },
+    // getLanguage(state,n){
+    //   state.locale='en'
+    //   console.log(state.locale)
+    // }
   },
+  
   actions: {},
   modules: {},
 });
