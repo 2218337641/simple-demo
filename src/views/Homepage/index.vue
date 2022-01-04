@@ -7,7 +7,7 @@
     <!-- 轮播图 -->
     <div class="home">
       <swiper ref="mySwiper" :options="swiperOption">
-        <swiper-slide v-for="(item, index) in list" :key="index">
+        <swiper-slide v-for="(item, index) in allist" :key="index">
           <div class="backimage" :style="item.backImage">
             <!-- <img :src="item.backImage" alt="寄" /> -->
             <div class="title" :style="{ color: item.color }">{{ item.name }}</div>
@@ -20,7 +20,7 @@
         <div class="swiper-button-next" slot="button-next"></div>-->
       </swiper>
       <swiper :options="swiperOption1" id="fir">
-        <swiper-slide v-for="(item, i) in area" :key="i">
+        <swiper-slide v-for="(item, i) in alarea" :key="i">
           <div class="backimage1" :style="item.backImage">
             <div class="titles">{{ item.tt }}</div>
           </div>
@@ -40,87 +40,10 @@ export default {
   name: "home",
   data() {
     return {
+      allist:null,
+      alarea:null,
       // 图片资源如果不用loader处理，似乎会被打包到加载不出来，(webpack导致的)
-      list: [
-        {
-          name: "歪",
-          color: "skyblue",
-          backImage: {
-            backgroundImage:
-              "url(" +
-              require("@/assets/img/Snipaste_2021-12-08_13-59-12.png") +
-              ")"
-          }
-        },
-        {
-          name: "比",
-          color: "white",
-          backImage: {
-            backgroundImage:
-              "url(" +
-              require("@/assets/img/Snipaste_2021-12-08_14-00-46.png") +
-              ")"
-          }
-        },
-        {
-          name: "巴",
-          color: "white",
-          backImage: {
-            backgroundImage:
-              "url(" +
-              require("@/assets/img/Snipaste_2021-12-08_14-01-15.png") +
-              ")"
-          }
-        },
-        {
-          name: "卜",
-          color: "white",
-          backImage: {
-            backgroundImage:
-              "url(" +
-              require("@/assets/img/Snipaste_2021-12-08_14-01-48.png") +
-              ")"
-          }
-        }
-      ],
-      area: [
-        {
-          tt: "布拉格广场",
-          backImage: {
-            backgroundImage:
-              "url(" +
-              require("@/assets/img/Snipaste_2021-12-08_13-59-12.png") +
-              ")"
-          }
-        },
-        {
-          tt: "下蛋公鸡",
-          backImage: {
-            backgroundImage:
-              "url(" +
-              require("@/assets/img/Snipaste_2021-12-08_14-00-46.png") +
-              ")"
-          }
-        },
-        {
-          tt: "套马杆的汉子",
-          backImage: {
-            backgroundImage:
-              "url(" +
-              require("@/assets/img/Snipaste_2021-12-08_14-01-15.png") +
-              ")"
-          }
-        },
-        {
-          tt: "走过咖啡屋",
-          backImage: {
-            backgroundImage:
-              "url(" +
-              require("@/assets/img/Snipaste_2021-12-08_14-01-48.png") +
-              ")"
-          }
-        }
-      ],
+      
       // swiper5的写法
       swiperOption: {
         autoplay: {
@@ -187,6 +110,10 @@ export default {
     swiper() {
       return this.$refs.mySwiper.swiper;
     }
+  },
+  created(){
+    this.allist=this.$store.state.list;
+    this.alarea=this.$store.state.area;
   },
   methods: {
     // 跳转

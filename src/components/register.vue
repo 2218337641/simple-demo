@@ -1,8 +1,18 @@
 <template>
   <div class="reg">
     <span class="firn">
-      <el-button type="text" @click="dialogFormVisible1 = true">登录</el-button>
-      <el-button type="text" @click="dialogFormVisible = true">注册</el-button>
+      <el-dropdown @command="handleCommand">
+        <span class="el-dropdown-link">
+          中文<i class="el-icon-arrow-down el-icon--right"></i>
+        </span>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item command='zh'>中文</el-dropdown-item>
+          <el-dropdown-item command='en'>英文</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+
+      <el-button type="text" @click="dialogFormVisible1 = true">{{$t('messages.login.login')}}</el-button>
+      <el-button type="text" @click="dialogFormVisible = true">{{$t('messages.login.enroll')}}</el-button>
     </span>
 
     <!-- 弹出的表单 -->
@@ -24,7 +34,7 @@
           <el-input
             type="password"
             v-model.trim="ruleForm.pass"
-            placeholder="请输入密码"
+            :placeholder="$t('messages.login.password')"
             autocomplete="off"
           ></el-input>
         </el-form-item>
@@ -145,8 +155,24 @@ export default {
       this.dialogFormVisible = false;
       this.dialogFormVisible1 = false;
       this.$refs[formName].resetFields();
+    },
+    
+    handleCommand(command){
+      this.lang = localStorage.getItem('locale') || 'zh';
+      if(command === 'en'){
+        this.lang = 'en';
+        this.$i18n.locale = this.lang;
+        console.log(111)
+      }else{
+        this.lang = 'zh';
+        this.$i18n.locale = this.lang
+      }
+      localStorage.setItem('locale',this.lang);
     }
-  }
+
+  },
+  created(){
+  },
 };
 </script>
 
@@ -179,7 +205,7 @@ div /deep/ .el-dialog {
 }
 
 .el-button {
-  padding: 10px 20px;
+  // padding: 10px 20px;
   font-size: 16px;
 }
 .reg {
@@ -188,4 +214,11 @@ div /deep/ .el-dialog {
   right: 0;
   z-index: 8888;
 }
+ .el-dropdown-link {
+    cursor: pointer;
+    color: #409EFF;
+  }
+  .el-icon-arrow-down {
+    font-size: 12px;
+  }
 </style>
