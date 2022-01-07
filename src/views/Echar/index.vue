@@ -120,7 +120,7 @@ export default {
 <style lang="less" scoped>
 .ech {
   background-color: rgb(243, 243, 243);
-  height: 880px;
+  height: 1040px;
   overflow: hidden;
 }
 .mains {

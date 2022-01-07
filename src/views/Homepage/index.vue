@@ -124,14 +124,14 @@ export default {
 
 <style lang="less" scoped>
 body {
-  height: 100px;
+  height: 1040px;
   overflow: hidden;
 }
 .home {
   position: relative;
   background: url("../../assets/山谷简约设计.jpg") no-repeat;
   width: 100%;
-  height: 880px;
+  height: 1040px;
 }
 .swiper-container {
   position: absolute;

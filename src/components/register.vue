@@ -3,11 +3,11 @@
     <span class="firn">
       <el-dropdown @command="handleCommand">
         <span class="el-dropdown-link">
-          中文<i class="el-icon-arrow-down el-icon--right"></i>
+          {{$t('messages.login.language')}}<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item command='zh'>中文</el-dropdown-item>
-          <el-dropdown-item command='en'>英文</el-dropdown-item>
+          <el-dropdown-item command='zh'>{{$t('messages.login.cn')}}</el-dropdown-item>
+          <el-dropdown-item command='en'>{{$t('messages.login.en')}}</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
 

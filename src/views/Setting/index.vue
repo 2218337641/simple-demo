@@ -220,7 +220,7 @@ html {
   overflow-x: scroll;
 }
 .his {
-  height: 880px;
+  height: 1040px;
   overflow: hidden;
   background-color: rgb(243, 243, 243);
   // background-color: #e5e9f2;

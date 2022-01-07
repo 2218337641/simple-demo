@@ -9,6 +9,9 @@ module.exports = {
         passwordLogin: '密码登录',
         authCodeLogin: '验证码登录',
         enroll: '注册',
+        language:'中文',
+        cn:'中文',
+        en:'英文'
         }
     }
 }

@@ -10,6 +10,9 @@ module.exports = {
         passwordLogin: 'Password login',
         authCodeLogin: 'Auth code login',
         enroll: 'Enroll',
+        language:'English',
+        en:'English',
+        cn:'Chinese'
         },
     }
 }

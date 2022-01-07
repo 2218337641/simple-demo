@@ -110,7 +110,7 @@ export default {
 .jill {
   position: relative;
   width: 100%;
-  height: 880px;
+  height: 1040px;
 }
 #firs {
   width: 100%;
