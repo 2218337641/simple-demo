@@ -5,7 +5,6 @@ Vue.use(Vuex);
 
 const state = {
   yname: "航班介绍",
-  // locale:"zh",
   list: [
     {
       name: "歪",

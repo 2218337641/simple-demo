@@ -8,6 +8,7 @@
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item command='zh'>{{$t('messages.login.cn')}}</el-dropdown-item>
           <el-dropdown-item command='en'>{{$t('messages.login.en')}}</el-dropdown-item>
+
         </el-dropdown-menu>
       </el-dropdown>
 
